@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Home Page
+</title><script src="bundles/modernizr.js"></script>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .bodybackground {
+            background-image: url('https://i.ibb.co/LdH0vxpn/Capture.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onbeforeunload = (function () {
+            $.ajax({
+                url: "Default.aspx/saveLog",
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+            });
+        });
+        //$(function () {
+        //    $("a").click(function () {
+        //        window.onbeforeunload = null;
+        //    });
+        //    $("input").click(function () {
+        //        window.onbeforeunload = null;
+        //    });
+        //});
+
+    </script>
+<link href="Content/css" rel="stylesheet"/>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /></head>
+<body class="bodybackground">
+    <form method="post" action="./default" id="ctl01" style="text-align:center">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl01'];
+if (!theForm) {
+    theForm = document.ctl01;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+<script src="/bundles/MsAjaxJs?v=D6VN0fHlwFSIWjbVzi6mZyE9Ls-4LNrSSYVGRU46XF81" type="text/javascript"></script>
+<script src="Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="/bundles/WebFormsJs?v=N8tymL9KraMLGAMFuPycfH3pXe6uUlRXdhtYv8A_jUU1" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="JD5b9lR0LxppLH1ueoPBD7CLcibomN59gz3tKJFmfC4JBxYkKJ6syjqzpm5+2hReLak56V1oYvVhLt6Dfdrie3cdNjvYAqKcyDvKY8hK02W6VD5+9FG8pGIKwCAxTExnQuPZ2zMFFdYsqVMpMQD0ar4dcShVTVw9k/XpaidnvPUYzb70KgRU93j+GqL44gcqlZmSRuSNhO2DJZXtLD91hsrVuAtayJRdHH6++0BJ9fmi+/kQ0QvwW5gB9VKOMfmyZzvzOMnXzYZuVMsRjmK570oUX4BAUznCN1ZDrk0DhcJpl127bXRR5S+3iELG1uYtVYIzGHoShC0mxRhApzJvsAk+JdmDuOOozA+XZ2EX8CAWYECfOW/mam2VgqH/z2oTGAByNdxUNISLrbWYUP1A+2fzL4EXNV1nPHlfYiXDfJfkHUNCS8Yt/R1t7eVj8nIyxvm/DR0KqPkJJWD2SO6qKzfWzUEozHgkemlq5zbWsz8b++yq91zuudv4lJg2D/O/C1JzNm1kkR/oQkdr04I/eKZygtKVj6IeHtobrb26RprkEf2uWGTn59JJCTbjC+QoHmeKZ3GZbOtN1mxz9yKB3hWvoN75ggL4Tq8S9r2imxiLnxHzHnnb7S62xwG5K78McxswpzOrYaItc8icgf7eraUQR9CrHAnjhoama6wSqmEvpbCGD9GPPM5DPiXXG/ZJmMVyyRyh/mXyjVTX5YN/R6zMHl65oRpXr6olRk1cSXYok7NWNYXEvXNLSJxzqQlIWohQY9HaUB7Grf2qG01Vz6onKs2NwNgPBCO1Usx35THw5MynHYOiqM2373oO2rETvMELg/XkCgJWmfSwGJkTVsyNiRZ89ByTTQxaDCoXmTu1DXvHTMvIatEfPbxTF8iLmflWdjLt8edovfARkYvhzUiCo+CPREYV64V9la9tk+vIb57tF/4vKeutCb3PTvy6tgqPsa5mPjgGEYJcCU8B7/3jAxXYv6KXZ7Yug1jjasVqeoNZNEtMIdKbu+6f83NKqSMXLeHYhHNdE4r2jzZfuWwftJrNpFnssSZe5jN2NTVSpoAvFdPGtmLdnl4GwSddeIQ4miN0sK0Y9Bu1XHHkmHxZBdRHtd2GGtj5prdp413+eVRkXMa6OQEM+Edow6+eTXiXFCNTUaPQX0hw9L6P6wJEd1Hb6ZT9n1GxaEPLui1ySaH2rWrubvvNrJ5pbKdjVQwJCgCFYUrxGdHXsaLtH11TMhJo4IT3HZ7s4YmAhMXOyeSLnjOf6/SyW1qRKoOo" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl08', 'ctl01', ['tctl00$ctl09','ctl09','tctl00$ContentPlaceHolder4$ctl00','ContentPlaceHolder4_ctl00','tctl00$ContentPlaceHolder4$uFEX','ContentPlaceHolder4_uFEX'], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+        <div class="navbar navbar-inverse">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="width:100%">
+                <div class="navbar-header" style="float:left">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="default"><img src="logo.png" title="البيانات الأساسية" style="width: 80px; height: 80px; padding: 0px; border: none; opacity: 60" /></a>
+                </div>
+                <div class="navbar-collapse collapse" style="float:left">
+                    <ul class="nav navbar-nav">
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" style="padding: 10px" title="الخروج من النظام" href="logout">Logout</a>
+                                </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content bodybackground" style="padding-top: 40px; z-index: 200">
+            <div id="ctl09">
+	
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="overflow: auto">
+                                
+                                
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="overflow: auto">
+                                
+
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="overflow: auto">
+                                
+                                
+                            </div>
+                            <div>
+                                
+    <div class="row col-lg-offset-0 col-md-offset-0 col-sm-offset-0" style="text-align: center; color: darkred; font-weight: bolder; font-size: xx-large; overflow: auto">
+        <span style="font-size: large; width: 100%; text-align: center">Student Info</span>
+    </div>
+    <div class="row col-lg-offset-2" style="justify-content: center; width: 100%">
+        <table style="width: 900px">
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>Student ID</span>
+                </td>
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblStdCode">: 202405156</span>
+                </td>
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>Student Name</span>
+                </td>
+                <td style="width: 50%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblStdName" title="مريم ثابت احمد اسماعيل سلامة">: مريم ثابت احمد اسماعيل سلامة</span>
+                </td>
+            </tr>
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>Semester</span>
+                </td>
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblCurSem" title="Summer 2025">: Summer 2025</span>
+                </td>
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>Faculty</span>
+                </td>
+                <td style="width: 50%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblFac" title="Faculty of Dentistry">: Faculty of Dentistry</span>
+                </td>
+            </tr>
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>Academic Advisor</span>
+                </td>
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblAdv" title=" ">:  </span>
+                </td>
+                <td style="width: 15%; font-size: 14px; font-weight: bold"></td>
+                <td style="width: 50%; font-size: 14px; font-weight: bold"></td>
+            </tr>
+
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>CGPA</span>
+                </td>
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblCurCGPA">: 1.9 / 4</span>
+                </td>
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>Major</span>
+                </td>
+                <td style="width: 50%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblMaj" title="Oral and Dental Medicine and Surgery">: Oral and Dental Medicine and Surgery</span>
+                </td>
+            </tr>
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>L.E. Balance</span>
+                </td>
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblLEBal" title="Credit=  اجمالي رصيد الطالب بالجنيه
+Debit= اجمالي المديونية بالجنيه الواجب سدادها">: 3.11</span>&nbsp;&nbsp;<span id="ContentPlaceHolder4_lblLEBalType" title="Credit=  اجمالي رصيد الطالب بالجنيه
+Debit= اجمالي المديونية بالجنيه الواجب سدادها"> Credit</span>
+                </td>
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>Status</span>
+                </td>
+                <td style="width: 50%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblStat" title="Regular">: Regular</span>
+                </td>
+            </tr>
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span>US $ Balance</span>
+                </td>
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblDBal" title="Credit=  اجمالي رصيد الطالب بالدولار
+Debit= اجمالي المديونية بالدولار الواجب سدادها">: 0</span>&nbsp;&nbsp;<span id="ContentPlaceHolder4_lblDBalType" title="Credit=  اجمالي رصيد الطالب بالدولار
+Debit= اجمالي المديونية بالدولار الواجب سدادها"></span>
+                </td>
+            </tr>
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold">
+                    
+                </td>
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblLESumBal"></span>&nbsp;&nbsp;
+                </td>
+            </tr>
+            <tr style="height: 20px">
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    
+                </td>
+                <td style="width: 15%; font-size: 14px; font-weight: bold; text-align:left">
+                    <span id="ContentPlaceHolder4_lblDSumBal"></span>&nbsp;&nbsp;
+                </td>
+            </tr>
+            <tr style="height: 20px">
+                <td style="width: 20%; font-size: 14px; font-weight: bold; text-align: left; color: red" colspan="4">
+                    <span id="ContentPlaceHolder4_lblCGPADESC">إنذار أكاديمى : انت الآن تحت المتابعة الأكاديمية لإنخفاض معدلك التراكمى عن 2 وفى حالة استمرار المعدل التراكمى أقل من 2 لأربعة فصول دراسية متتالية أو ستة فصول دراسية متقطعة ستتعرض للفصل من الجامعة طبقا للائحة الجامعة</span>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="row col-lg-offset-1" style="justify-content: center; height: auto; width: 100%; margin: 0 auto">
+        <div id="ContentPlaceHolder4_ctl00">
+		
+                <div style="width: 100%; overflow: auto; height: auto">
+                    <div>
+			<table cellspacing="0" cellpadding="4" align="Center" rules="all" border="1" id="ContentPlaceHolder4_GridView14" style="color:#2461BF;border-style:Dotted;width:100%;border-collapse:collapse;">
+				<tr align="center" style="background-color:#EFF3FB;font-size:8px;">
+					<td align="center" valign="top" style="height:100%;width:100%;">
+                                    <table style="width: 100%">
+                                        <tr style="width: 100%">
+                                            <td style="text-align: center">
+                                                <span id="ContentPlaceHolder4_GridView14_lblTitle_0" style="font-size:Large;font-weight:bold;">تقديم التظلمات من نتائج فصل ربيع 2025 + تسجيل المقررات فى الفصل الدراسى القادم صيف 2025</span>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr style="width: 100%; height: auto">
+                                            <td style="width: 70%; height: auto; text-align: right">
+                                                <textarea name="ctl00$ContentPlaceHolder4$GridView14$ctl02$txtNews" rows="2" cols="20" id="ContentPlaceHolder4_GridView14_txtNews_0" disabled="disabled" class="aspNetDisabled txt" style="background-color:LightYellow;border-style:None;font-size:Large;width:100%;">
+سيتم فتح تقديم التظلمات من نتائج الفصل الدراسى ربيع 2025 بدء من يوم السبت الموافق 21-06-2025 حتى نهاية يوم الاثنين الموافق 23-06-2025 -
+سيتم فتح التسجيل الألكترونى لجميع كليات الجامعة للفصل الدراسى صيف 2025 بدء من يوم الثلاثاء الموافق 24-06-2025 حتى نهاية يوم الخميس الموافق 03-07-2025 -
+الطلبة المدينون رجاء سرعة سداد المديونيات والأقساط فى مواعيدها وذلك على حساب الجامعة التالى  بنك مصر فرع العريش للمعاملات الاسلامية  رقم الحساب   4330240000001899 - 
+وذلك حتى يتم السماح برؤية نتيجة الامتحانات النهائية وتقديم التظلمات فى الفصل الدراسى ربيع 2025 والسماح بتسجيل المواد فى الفصل الدراسى القادم صيف 2025</textarea>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+				</tr>
+			</table>
+		</div>
+                </div>
+            
+	</div>
+
+    </div>
+    <br />
+    <div class="row" style="justify-content: center; height: auto; margin: 0 auto">
+        
+        <div id="ContentPlaceHolder4_uFEX">
+		
+                <div style="width: 100%; overflow: auto">
+                    <span id="ContentPlaceHolder4_lblFinalExam" style="color:Red;font-size:Large;">Results of Spring 2025</span>
+                    <div>
+			<table cellspacing="0" cellpadding="4" align="Center" rules="all" border="1" id="ContentPlaceHolder4_GridView11" style="color:#333333;width:100%;border-collapse:collapse;">
+				<tr style="color:White;background-color:#507CD1;font-size:10px;font-weight:bold;">
+					<th scope="col">Course Code</th><th scope="col">Course Title</th><th scope="col">Credit Hrs.</th><th scope="col">Grade</th><th scope="col">Earned Hrs.</th><th scope="col">Points</th>
+				</tr><tr align="center" valign="middle" style="background-color:#EFF3FB;font-size:10px;">
+					<td>DEG-1203</td><td>Physiology (1)</td><td>2</td><td>C</td><td>2</td><td>3.2</td>
+				</tr><tr align="center" valign="middle" style="background-color:#FCFCC9;font-size:10px;">
+					<td>DEG-1205</td><td>Human Anatomy (2) Head and Neck</td><td>3</td><td>C+</td><td>3</td><td>7.5</td>
+				</tr><tr align="center" valign="middle" style="background-color:#EFF3FB;font-size:10px;">
+					<td>DEH-1201</td><td>Dental Anatomy and Oral Physiology (2)</td><td>3</td><td>C+</td><td>3</td><td>6.9</td>
+				</tr><tr align="center" valign="middle" style="background-color:#FCFCC9;font-size:10px;">
+					<td>DER-1203</td><td>Dental Biomaterials (1)</td><td>3</td><td>D</td><td>3</td><td>3</td>
+				</tr><tr align="center" valign="middle" style="background-color:#EFF3FB;font-size:10px;">
+					<td>HUR-1001</td><td>Human Rights</td><td>1</td><td>B</td><td>1</td><td>3</td>
+				</tr>
+			</table>
+		</div>
+                </div>
+                <div style="width: 100%; text-align:center; overflow: auto">
+                    <p style="font-size: large; color: red; display: contents; margin-bottom: 0rem">Academic Summary</p>
+                    <div>
+			<table cellspacing="0" cellpadding="4" align="Center" rules="all" border="1" id="ContentPlaceHolder4_GridView13" style="color:#333333;width:100%;border-collapse:collapse;">
+				<tr style="color:White;background-color:#507CD1;font-size:10px;font-weight:bold;">
+					<th scope="col">Attempted Hours</th><th scope="col">Earned Hours</th><th scope="col">Semester GPA</th><th scope="col">CGPA</th>
+				</tr><tr align="center" valign="middle" style="background-color:#EFF3FB;font-size:10px;">
+					<td>27</td><td>22</td><td>1.34</td><td>1.9</td>
+				</tr>
+			</table>
+		</div>
+                </div>
+                <div style="text-align: center; color: darkred; font-weight: bolder; font-size: xx-large">
+                    <p style="font-size: large; color: red; display: contents; margin-bottom: 0rem">GPA Key Definition</p>
+                    <div style="overflow: auto">
+                        <center>
+                            <table style="font-size: 8px; table-layout:fixed" border="1">
+                                <thead>
+                                    <tr style="font-size: 8px; background-color: lightgray">
+                                        <td style="background-color: lightgray; max-width:80px;font-weight: bold">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBoxh" type="text" value="Grade" readonly="readonly" id="ContentPlaceHolder4_TextBoxh" class="mytext" style="background-color:LightGrey;width:80px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox1" type="text" value="A" readonly="readonly" id="ContentPlaceHolder4_TextBox1" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox2" type="text" value="A-" readonly="readonly" id="ContentPlaceHolder4_TextBox2" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox3" type="text" value="B+" readonly="readonly" id="ContentPlaceHolder4_TextBox3" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox4" type="text" value="B" readonly="readonly" id="ContentPlaceHolder4_TextBox4" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox5" type="text" value="B-" readonly="readonly" id="ContentPlaceHolder4_TextBox5" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox6" type="text" value="C+" readonly="readonly" id="ContentPlaceHolder4_TextBox6" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox7" type="text" value="C" readonly="readonly" id="ContentPlaceHolder4_TextBox7" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox8" type="text" value="C-" readonly="readonly" id="ContentPlaceHolder4_TextBox8" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox9" type="text" value="D+" readonly="readonly" id="ContentPlaceHolder4_TextBox9" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox10" type="text" value="D" readonly="readonly" id="ContentPlaceHolder4_TextBox10" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox11" type="text" value="F" readonly="readonly" id="ContentPlaceHolder4_TextBox11" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox12" type="text" value="W" readonly="readonly" id="ContentPlaceHolder4_TextBox12" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox13" type="text" value="FW" readonly="readonly" id="ContentPlaceHolder4_TextBox13" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox14" type="text" value="I" readonly="readonly" id="ContentPlaceHolder4_TextBox14" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox15" type="text" value="CN" readonly="readonly" id="ContentPlaceHolder4_TextBox15" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox16" type="text" value="T" readonly="readonly" id="ContentPlaceHolder4_TextBox16" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$TextBox17" type="text" value="P" readonly="readonly" id="ContentPlaceHolder4_TextBox17" class="mytext" style="background-color:LightGrey;width:65px;" />
+                                        </td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="font-size: 8px">
+                                        <td style="background-color: lightgray; max-width:80px; font-weight: bold">
+                                            <input name="ctl00$ContentPlaceHolder4$th" type="text" value="Percentage" readonly="readonly" id="ContentPlaceHolder4_th" class="mytext" style="background-color:LightGrey;width:80px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t1" type="text" value="Per. >=90" readonly="readonly" id="ContentPlaceHolder4_t1" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t2" type="text" value="90 > Per. >=85" readonly="readonly" id="ContentPlaceHolder4_t2" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t3" type="text" value="85 > Per. >=80" readonly="readonly" id="ContentPlaceHolder4_t3" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t4" type="text" value="80 > Per. >=75" readonly="readonly" id="ContentPlaceHolder4_t4" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t5" type="text" value="75 > Per. >=72.5" readonly="readonly" id="ContentPlaceHolder4_t5" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t6" type="text" value="72.5 > Per. >=70" readonly="readonly" id="ContentPlaceHolder4_t6" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t7" type="text" value="70 > Per. >=67.5" readonly="readonly" id="ContentPlaceHolder4_t7" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t8" type="text" value="67.5 > Per. >=65" readonly="readonly" id="ContentPlaceHolder4_t8" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t9" type="text" value="65 > Per. >=62.5" readonly="readonly" id="ContentPlaceHolder4_t9" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t10" type="text" value="62.5 > Per. >=60" readonly="readonly" id="ContentPlaceHolder4_t10" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t11" type="text" value="60 > Per." readonly="readonly" id="ContentPlaceHolder4_t11" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t12" type="text" readonly="readonly" id="ContentPlaceHolder4_t12" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t13" type="text" readonly="readonly" id="ContentPlaceHolder4_t13" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t14" type="text" readonly="readonly" id="ContentPlaceHolder4_t14" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t15" type="text" readonly="readonly" id="ContentPlaceHolder4_t15" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t16" type="text" readonly="readonly" id="ContentPlaceHolder4_t16" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$t17" type="text" readonly="readonly" id="ContentPlaceHolder4_t17" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                    </tr>
+                                    <tr style="font-size: 8px">
+                                        <td style="background-color: lightgray; max-width:80px; font-weight: bold">
+                                            <input name="ctl00$ContentPlaceHolder4$ph" type="text" value="Points" readonly="readonly" id="ContentPlaceHolder4_ph" class="mytext" style="background-color:LightGrey;width:80px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p1" type="text" value="4" readonly="readonly" id="ContentPlaceHolder4_p1" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p2" type="text" value="3.7" readonly="readonly" id="ContentPlaceHolder4_p2" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p3" type="text" value="3.3" readonly="readonly" id="ContentPlaceHolder4_p3" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p4" type="text" value="3" readonly="readonly" id="ContentPlaceHolder4_p4" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p5" type="text" value="2.7" readonly="readonly" id="ContentPlaceHolder4_p5" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p6" type="text" value="2.3" readonly="readonly" id="ContentPlaceHolder4_p6" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p7" type="text" value="2" readonly="readonly" id="ContentPlaceHolder4_p7" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p8" type="text" value="1.7" readonly="readonly" id="ContentPlaceHolder4_p8" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p9" type="text" value="1.3" readonly="readonly" id="ContentPlaceHolder4_p9" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p10" type="text" value="1" readonly="readonly" id="ContentPlaceHolder4_p10" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p11" type="text" value="0" readonly="readonly" id="ContentPlaceHolder4_p11" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p12" type="text" value="0" readonly="readonly" id="ContentPlaceHolder4_p12" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p13" type="text" value="0" readonly="readonly" id="ContentPlaceHolder4_p13" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p14" type="text" value="0" readonly="readonly" id="ContentPlaceHolder4_p14" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p15" type="text" value="0" readonly="readonly" id="ContentPlaceHolder4_p15" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p16" type="text" value="0" readonly="readonly" id="ContentPlaceHolder4_p16" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                        <td style="width: 50px">
+                                            <input name="ctl00$ContentPlaceHolder4$p17" type="text" value="0" readonly="readonly" id="ContentPlaceHolder4_p17" class="mytext" style="background-color:White;width:65px;" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </center>
+                    </div>
+                </div>
+
+            
+	</div>
+
+    </div>
+
+
+                            </div>
+                            <div style="overflow: auto">
+                                
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                
+</div>
+        </div>
+
+    </form>
+    
+
+</body>
+</html>
