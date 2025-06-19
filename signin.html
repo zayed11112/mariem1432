@@ -109,7 +109,7 @@ Student Login
     </script>
 </head>
 <body class="bodybackground">
-        <form method="get" action="#" onsubmit="window.location.href='dashboard.html'; return false;" id="form1">
+        <form method="get" action="student.html" onsubmit="return $('#txtUser').val() && $('#txtPwd').val();" id="form1">
 <div class="aspNetHidden">
 <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
@@ -201,7 +201,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tloginU
                                 </tr>
                                 <tr style="width: 100%; text-align: center">
                                     <td class="halfw-fullh" colspan="2">
-                                        <input type="button" name="btnLogin" value="Login" onclick="if($('#txtUser').val() && $('#txtPwd').val()) window.location.href='student.html';" id="btnLogin" tabindex="2" />
+                                        <input type="submit" name="btnLogin" value="Login" id="btnLogin" tabindex="2" />
                                     </td>
                                 </tr>
                             </table>
